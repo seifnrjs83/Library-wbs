@@ -1,3 +1,5 @@
+````md
+```sql
 CREATE TABLE BOOK (
 BOOK_ID NUMBER PRIMARY KEY,
 TITLE VARCHAR2(100),
@@ -6,8 +8,11 @@ CATEGORY VARCHAR2(30),
 STATUS VARCHAR2(20),
 REG_DATE DATE
 );
+```
 
 ---
+
+```sql
 INSERT INTO BOOK (
 BOOK_ID,
 TITLE,
@@ -24,15 +29,25 @@ VALUES (
 'AVAILAVLE',
 SYSDATE
 );
+```
 
+```sql
 SELECT * FROM BOOK;
+```
 
+```sql
 UPDATE BOOK
 SET STATUS = 'AVAILABLE'
 WHERE BOOK_ID = 1;
+```
 
+```sql
 SELECT * FROM USER_TABLES;
+```
 
+---
+
+```sql
 CREATE TABLE MEMBER (
 MEMBER_ID NUMBER PRIMARY KEY,
 NAME VARCHAR2(30),
@@ -41,9 +56,13 @@ PHONE VARCHAR2(20),
 ADDRESS VARCHAR2(200),
 REG_DATE DATE
 );
+```
 
+```sql
 SELECT * FROM MEMBER;
+```
 
+```sql
 INSERT INTO MEMBER (
 MEMBER_ID,
 NAME,
@@ -60,11 +79,15 @@ VALUES(
 '서울시 금천구',
 SYSDATE
 );
+```
 
+```sql
 SELECT * FROM MEMBER;
+```
 
 ---
 
+```sql
 CREATE TABLE LOAN (
 LOAN_ID NUMBER PRIMARY KEY,
 BOOK_ID NUMBER,
@@ -79,9 +102,13 @@ REFERENCES BOOK(BOOK_ID),
 FOREIGN KEY (MEMBER_ID)
 REFERENCES MEMBER(MEMBER_ID)
 );
+```
 
+```sql
 SELECT * FROM USER_TABLES;
+```
 
+```sql
 INSERT INTO LOAN (
 LOAN_ID,
 BOOK_ID,
@@ -95,16 +122,23 @@ VALUES(
 1,
 1,
 SYSDATE,
-NULL,  
+NULL,
 'LOANED'
 );
----
---RETURN DATE에 SYSDATE로 넣게 되면 대출하자마자 반납상태처럼 어색함--
---이경우에 NULL로 넣어놓기.--
+```
 
+---
+-- RETURN_DATE에 SYSDATE로 넣게 되면 대출하자마자 반납상태처럼 어색함
+-- 이 경우에 NULL로 넣어놓기.
+---
+
+```sql
 SELECT * FROM LOAN;
+```
 
 ---
+
+```sql
 SELECT
 L.LOAN_ID,
 B.TITLE,
@@ -116,10 +150,14 @@ JOIN BOOK B
 ON L.BOOK_ID = B.BOOK_ID
 JOIN MEMBER M
 ON L.MEMBER_ID = M.MEMBER_ID;
+```
 
---그냥 위처럼 LOAN 테이블 전체 조회시 ID 값으로만 나와서 가독성 떨어짐--
---이럴때 JOIN 사용해서 다른테이블의 값 가져오기--
+---
+-- 그냥 위처럼 LOAN 테이블 전체 조회시 ID 값으로만 나와서 가독성 떨어짐
+-- 이럴때 JOIN 사용해서 다른테이블의 값 가져오기
+---
 
+```sql
 CREATE TABLE HR_INFO (
 EMP_ID NUMBER PRIMARY KEY,
 EMP_NAME VARCHAR2(30),
@@ -127,7 +165,9 @@ DEPT_NAME VARCHAR2(30),
 POSITION_NAME VARCHAR2(30),
 UPDATED_AT DATE
 );
+```
 
+```sql
 INSERT INTO HR_INFO (
 EMP_ID,
 EMP_NAME,
@@ -142,11 +182,15 @@ VALUES(
 '팀장',
 SYSDATE
 );
+```
 
+```sql
 SELECT * FROM HR_INFO;
+```
 
 --------------------
 
 ## ERD
 
 ![ERD](TABLE3.png)
+````
