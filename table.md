@@ -149,4 +149,4 @@ SELECT * FROM HR_INFO;
 
 ## ERD
 
-![ERD](docs/TABLE3.png)
+![ERD](TABLE3.png)
