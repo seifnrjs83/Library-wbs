@@ -1,4 +1,3 @@
-````md
 ```sql
 CREATE TABLE BOOK (
 BOOK_ID NUMBER PRIMARY KEY,
@@ -188,12 +187,8 @@ SYSDATE
 SELECT * FROM HR_INFO;
 ```
 
-
-
-
 -----------------------
 
 ## ERD
 
 ![ERD](TABLE3.png)
-
