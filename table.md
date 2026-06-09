@@ -9,7 +9,7 @@ REG_DATE DATE
 );
 ```
 
----
+
 
 ```sql
 INSERT INTO BOOK (
@@ -44,7 +44,7 @@ WHERE BOOK_ID = 1;
 SELECT * FROM USER_TABLES;
 ```
 
----
+
 
 ```sql
 CREATE TABLE MEMBER (
@@ -84,7 +84,7 @@ SYSDATE
 SELECT * FROM MEMBER;
 ```
 
----
+
 
 ```sql
 CREATE TABLE LOAN (
@@ -126,16 +126,14 @@ NULL,
 );
 ```
 
----
 -- RETURN_DATE에 SYSDATE로 넣게 되면 대출하자마자 반납상태처럼 어색함
 -- 이 경우에 NULL로 넣어놓기.
----
 
 ```sql
 SELECT * FROM LOAN;
 ```
 
----
+
 
 ```sql
 SELECT
@@ -151,10 +149,10 @@ JOIN MEMBER M
 ON L.MEMBER_ID = M.MEMBER_ID;
 ```
 
----
+
 -- 그냥 위처럼 LOAN 테이블 전체 조회시 ID 값으로만 나와서 가독성 떨어짐
 -- 이럴때 JOIN 사용해서 다른테이블의 값 가져오기
----
+
 
 ```sql
 CREATE TABLE HR_INFO (
