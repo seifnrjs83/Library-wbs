@@ -144,3 +144,9 @@ SYSDATE
 );
 
 SELECT * FROM HR_INFO;
+
+--------------------
+
+## ERD
+
+![ERD](docs/erd.png)
